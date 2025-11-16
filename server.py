@@ -28,7 +28,7 @@ print("🔥 Firebase Secret Loaded Successfully")
 # -------------------------
 @app.route("/")
 def home():
-    return send_from_directory("public", "vehicle_form.html")
+    return send_from_directory("public", "index.html")
 
 @app.route("/<path:path>")
 def static_file(path):
@@ -134,3 +134,4 @@ def register():
 if __name__ == "__main__":
     print(f"✅ Server running → http://localhost:{PORT}")
     app.run(host="0.0.0.0", port=PORT, debug=True)
+
