@@ -30,9 +30,10 @@ print("🔥 Firebase Secret Loaded Successfully")
 def home():
     return send_from_directory("public", "index.html")
 
-@app.route("/<path:path>")
-def static_file(path):
-    return send_from_directory("public", path)
+@app.route("/public/<path:filename>")
+def public_files(filename):
+    return send_from_directory("public", filename)
+
 
 # -------------------------
 # CNIC Validator
@@ -134,4 +135,5 @@ def register():
 if __name__ == "__main__":
     print(f"✅ Server running → http://localhost:{PORT}")
     app.run(host="0.0.0.0", port=PORT, debug=True)
+
 
